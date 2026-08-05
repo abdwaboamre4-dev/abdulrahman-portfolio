@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdulrahman Abu Amer | Computer Science Student &amp; AI Enthusiast</title>
+  <meta name="description" content="Abdulrahman Abu Amer — Computer Science student at Arab Open University, AI enthusiast and Digital Marketing specialist based in Cairo, Egypt. Explore AI-powered projects, digital marketing campaigns and skills." />
+  <meta name="keywords" content="Abdulrahman Abu Amer, AI Enthusiast, Digital Marketing Specialist, Computer Science Student, Cairo Egypt, Social Media Management, AI Tools" />
+  <meta name="author" content="Abdulrahman Abu Amer" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Abdulrahman Abu Amer | AI Enthusiast &amp; Digital Marketing Specialist" />
+  <meta property="og:description" content="Computer Science student at Arab Open University exploring AI, digital marketing and modern technology." />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Abdulrahman Abu Amer | AI Enthusiast &amp; Digital Marketing Specialist" />
+  <meta name="twitter:description" content="Computer Science student at Arab Open University exploring AI, digital marketing and modern technology." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f172a'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Arial' font-weight='700' fill='%2338bdf8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===================== CURSOR GLOW ===================== -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__core">
+      <svg class="loader__ring" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="52" class="loader__ring-track" />
+        <circle cx="60" cy="60" r="52" class="loader__ring-progress" />
+      </svg>
+      <span class="loader__mark">AA</span>
+    </div>
+    <p class="loader__label">Initializing portfolio<span class="loader__dots"><span>.</span><span>.</span><span>.</span></span></p>
+  </div>
+
+  <!-- ===================== BACKGROUND CANVAS ===================== -->
+  <canvas id="network-canvas" aria-hidden="true"></canvas>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="navbar__inner">
+      <a href="#home" class="navbar__logo" aria-label="Abdulrahman Abu Amer — home">
+        <span class="navbar__logo-mark">AA</span>
+        <span class="navbar__logo-text">Abu Amer</span>
+      </a>
+
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-nav>Home</a></li>
+        <li><a href="#about" class="nav-link" data-nav>About</a></li>
+        <li><a href="#skills" class="nav-link" data-nav>Skills</a></li>
+        <li><a href="#ai-tools" class="nav-link" data-nav>AI Tools</a></li>
+        <li><a href="#services" class="nav-link" data-nav>Services</a></li>
+        <li><a href="#projects" class="nav-link" data-nav>Projects</a></li>
+        <li><a href="#timeline" class="nav-link" data-nav>Journey</a></li>
+        <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <a href="assets/Abdulrahman_Abu_Amer_CV.pdf" download class="btn btn--ghost btn--sm">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          CV
+        </a>
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+      <div class="hero__inner container">
+        <div class="hero__text reveal" data-reveal>
+          <p class="hero__eyebrow">
+            <span class="status-dot"></span> Based in Cairo, Egypt — Open to opportunities
+          </p>
+          <h1 class="hero__name">Abdulrahman<br /><span class="text-gradient">Abu Amer</span></h1>
+          <h2 class="hero__role">
+            <span id="typingText"></span><span class="cursor" aria-hidden="true">|</span>
+          </h2>
+          <p class="hero__desc">
+            Computer Science student at Arab Open University with a strong passion for
+            Artificial Intelligence, AI tools, digital marketing and modern technology —
+            turning new tools into real, creative work.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#contact" class="btn btn--primary" data-magnetic>
+              Get In Touch
+              <svg viewBox="0 0 24 24" class="icon"><path d="M5 12h14m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="assets/Abdulrahman_Abu_Amer_CV.pdf" download class="btn btn--outline" data-magnetic>
+              <svg viewBox="0 0 24 24" class="icon"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download CV
+            </a>
+          </div>
+
+          <div class="hero__socials">
+            <a href="mailto:abdwaboamre4@gmail.com" class="social-icon" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="tel:+201275230567" class="social-icon" aria-label="Phone">
+              <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1.2 1.2 0 0 1 1.2-.3 9 9 0 0 0 2.8.45 1.2 1.2 0 0 1 1.2 1.2V20a1.2 1.2 0 0 1-1.2 1.2A17.4 17.4 0 0 1 2.8 4.4 1.2 1.2 0 0 1 4 3.2h3.15a1.2 1.2 0 0 1 1.2 1.2 9 9 0 0 0 .45 2.8 1.2 1.2 0 0 1-.3 1.2z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="GitHub — coming soon" title="Coming soon">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03a9.4 9.4 0 0 1 5 0c1.9-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z" stroke="currentColor" stroke-width="0" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn — coming soon" title="Coming soon">
+              <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21h-4z" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" data-reveal data-reveal-delay="150">
+          <div class="orbit-frame">
+            <svg class="orbit-frame__ring orbit-frame__ring--dashed" viewBox="0 0 300 300"><circle cx="150" cy="150" r="140" /></svg>
+            <svg class="orbit-frame__ring orbit-frame__ring--solid" viewBox="0 0 300 300"><circle cx="150" cy="150" r="118" /></svg>
+            <div class="orbit-frame__avatar">
+              <img src="assets/profile.jpg" alt="Abdulrahman Abu Amer" />
+            </div>
+            <div class="orbit-frame__badge orbit-frame__badge--1">AI</div>
+            <div class="orbit-frame__badge orbit-frame__badge--2">&lt;/&gt;</div>
+            <div class="orbit-frame__badge orbit-frame__badge--3">📈</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to about section">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-card reveal" data-reveal>
+          <span class="stat-card__number" data-count="9">0</span><span class="stat-card__plus">+</span>
+          <p class="stat-card__label">AI Tools Explored</p>
+        </div>
+        <div class="stat-card reveal" data-reveal data-reveal-delay="100">
+          <span class="stat-card__number" data-count="4">0</span><span class="stat-card__plus">+</span>
+          <p class="stat-card__label">Projects Delivered</p>
+        </div>
+        <div class="stat-card reveal" data-reveal data-reveal-delay="200">
+          <span class="stat-card__number" data-count="3">0</span>
+          <p class="stat-card__label">Core Disciplines</p>
+        </div>
+        <div class="stat-card reveal" data-reveal data-reveal-delay="300">
+          <span class="stat-card__number" data-count="100">0</span><span class="stat-card__plus">%</span>
+          <p class="stat-card__label">Dedication</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="section-eyebrow">Who I Am</p>
+          <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass-card about-card reveal" data-reveal>
+            <p>
+              I am a Computer Science student at <strong>Arab Open University</strong> with a strong
+              passion for Artificial Intelligence, AI tools, digital marketing, social media management
+              and modern technologies.
+            </p>
+            <p>
+              I enjoy learning new skills, creating AI-powered content, designing professional marketing
+              materials, managing social media pages, and continuously improving myself. I am highly
+              motivated, creative, and always eager to explore new technologies and real-world projects.
+            </p>
+            <div class="about-facts">
+              <div class="about-fact">
+                <span class="about-fact__label">Location</span>
+                <span class="about-fact__value">Cairo, Egypt</span>
+              </div>
+              <div class="about-fact">
+                <span class="about-fact__label">Focus</span>
+                <span class="about-fact__value">AI &amp; Digital Marketing</span>
+              </div>
+              <div class="about-fact">
+                <span class="about-fact__label">Education</span>
+                <span class="about-fact__value">B.Sc. Computer Science</span>
+              </div>
+              <div class="about-fact">
+                <span class="about-fact__label">Languages</span>
+                <span class="about-fact__value">Arabic, English (B2)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal about-side" data-reveal data-reveal-delay="150">
+            <div class="glass-card mini-card">
+              <div class="mini-card__icon">🎓</div>
+              <h3>Current Student</h3>
+              <p>Bachelor of Computer Science, Arab Open University</p>
+            </div>
+            <div class="glass-card mini-card">
+              <div class="mini-card__icon">🤖</div>
+              <h3>AI Enthusiast</h3>
+              <p>Hands-on with 9+ leading AI tools for content and creativity</p>
+            </div>
+            <div class="glass-card mini-card">
+              <div class="mini-card__icon">📊</div>
+              <h3>Marketing Mindset</h3>
+              <p>Planning and running campaigns across Meta platforms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="section-eyebrow">Capabilities</p>
+          <h2 class="section-title">Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="glass-card skills-card reveal" data-reveal>
+            <h3 class="skills-card__title">Digital Marketing</h3>
+            <div class="skill-bar" data-skill="Facebook Marketing" data-level="90"></div>
+            <div class="skill-bar" data-skill="Social Media Management" data-level="92"></div>
+            <div class="skill-bar" data-skill="Meta Business Suite" data-level="85"></div>
+            <div class="skill-bar" data-skill="Meta Ads Manager" data-level="80"></div>
+            <div class="skill-bar" data-skill="Content Creation" data-level="90"></div>
+            <div class="skill-bar" data-skill="Branding &amp; Advertising Campaigns" data-level="82"></div>
+          </div>
+
+          <div class="glass-card skills-card reveal" data-reveal data-reveal-delay="100">
+            <h3 class="skills-card__title">Programming</h3>
+            <div class="skill-bar" data-skill="HTML" data-level="88"></div>
+            <div class="skill-bar" data-skill="CSS" data-level="85"></div>
+            <div class="skill-bar" data-skill="JavaScript" data-level="75"></div>
+
+            <h3 class="skills-card__title skills-card__title--spaced">Microsoft Office</h3>
+            <div class="skill-bar" data-skill="Word" data-level="90"></div>
+            <div class="skill-bar" data-skill="Excel" data-level="82"></div>
+            <div class="skill-bar" data-skill="PowerPoint" data-level="92"></div>
+          </div>
+        </div>
+
+        <div class="languages-row reveal" data-reveal data-reveal-delay="200">
+          <div class="glass-card lang-pill">
+            <span class="lang-pill__name">Arabic</span>
+            <span class="lang-pill__level">Native</span>
+          </div>
+          <div class="glass-card lang-pill">
+            <span class="lang-pill__name">English</span>
+            <span class="lang-pill__level">B2 — Upper Intermediate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AI TOOLS ===================== -->
+    <section class="section" id="ai-tools">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="section-eyebrow">Tech Stack</p>
+          <h2 class="section-title">AI Tools I Work With</h2>
+          <p class="section-subtitle">A curated toolkit I use daily to research, create and design faster.</p>
+        </div>
+
+        <div class="ai-grid">
+          <div class="ai-chip glass-card reveal" data-tilt data-tilt-sm data-reveal>ChatGPT</div>
+          <div class="ai-chip glass-card reveal" data-tilt data-tilt-sm data-reveal data-reveal-delay="50">Google Gemini</div>
+          <div class="ai-chip glass-card reveal" data-tilt data-tilt-sm data-reveal data-reveal-delay="100">Microsoft Copilot</div>
+          <div class="ai-chip glass-card reveal" data-tilt data-tilt-sm data-reveal data-reveal-delay="150">Claude AI</div>
+          <div class="ai-chip glass-card reveal" data-tilt data-tilt-sm data-reveal data-reveal-delay="200">Perplexity AI</div>
+          <div class="ai-chip glass-card reveal" data-tilt data-tilt-sm data-reveal data-reveal-delay="250">Leonardo AI</div>
+          <div class="ai-chip glass-card reveal" data-tilt data-tilt-sm data-reveal data-reveal-delay="300">Midjourney</div>
+          <div class="ai-chip glass-card reveal" data-tilt data-tilt-sm data-reveal data-reveal-delay="350">Canva AI</div>
+          <div class="ai-chip glass-card reveal" data-tilt data-tilt-sm data-reveal data-reveal-delay="400">CapCut AI</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="section-eyebrow">What I Offer</p>
+          <h2 class="section-title">Services</h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="glass-card service-card reveal" data-tilt data-reveal>
+            <div class="service-card__icon">🎨</div>
+            <h3>AI Content &amp; Poster Design</h3>
+            <p>Professional posters and visuals created with AI tools like Leonardo AI, Midjourney and Canva AI.</p>
+          </div>
+          <div class="glass-card service-card reveal" data-tilt data-reveal data-reveal-delay="100">
+            <div class="service-card__icon">🎬</div>
+            <h3>AI Video Production</h3>
+            <p>Promotional and marketing videos produced and edited using AI-powered tools like CapCut AI.</p>
+          </div>
+          <div class="glass-card service-card reveal" data-tilt data-reveal data-reveal-delay="200">
+            <div class="service-card__icon">📱</div>
+            <h3>Social Media Management</h3>
+            <p>End-to-end management of Facebook pages, content calendars and community engagement.</p>
+          </div>
+          <div class="glass-card service-card reveal" data-tilt data-reveal data-reveal-delay="300">
+            <div class="service-card__icon">🚀</div>
+            <h3>Digital Marketing Campaigns</h3>
+            <p>Planning, running and optimizing advertising campaigns through Meta Ads Manager.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="section-eyebrow">Selected Work</p>
+          <h2 class="section-title">Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card glass-card reveal" data-tilt data-reveal>
+            <div class="project-card__glow"></div>
+            <div class="project-card__icon">🖼️</div>
+            <span class="project-card__tag">AI Design</span>
+            <h3>AI Poster Design</h3>
+            <p>Professional posters designed using AI technologies, blending brand identity with generative visuals.</p>
+            <div class="project-card__stack">
+              <span>Leonardo AI</span><span>Midjourney</span><span>Canva AI</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-card reveal" data-tilt data-reveal data-reveal-delay="100">
+            <div class="project-card__glow"></div>
+            <div class="project-card__icon">🎥</div>
+            <span class="project-card__tag">AI Video</span>
+            <h3>AI Video Production</h3>
+            <p>Creating promotional and marketing videos using AI, from scripting to final edit.</p>
+            <div class="project-card__stack">
+              <span>CapCut AI</span><span>ChatGPT</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-card reveal" data-tilt data-reveal data-reveal-delay="200">
+            <div class="project-card__icon">📣</div>
+            <div class="project-card__glow"></div>
+            <span class="project-card__tag">Marketing</span>
+            <h3>Social Media Management</h3>
+            <p>Managing Facebook pages end-to-end and building advertising campaigns that reach the right audience.</p>
+            <div class="project-card__stack">
+              <span>Meta Business Suite</span><span>Meta Ads Manager</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-card reveal" data-tilt data-reveal data-reveal-delay="300">
+            <div class="project-card__glow"></div>
+            <div class="project-card__icon">📈</div>
+            <span class="project-card__tag">Strategy</span>
+            <h3>Digital Marketing Campaigns</h3>
+            <p>Planning and optimizing social media marketing campaigns end-to-end, from strategy to performance.</p>
+            <div class="project-card__stack">
+              <span>Meta Ads Manager</span><span>Content Creation</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TIMELINE ===================== -->
+    <section class="section section--alt" id="timeline">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="section-eyebrow">Education &amp; Growth</p>
+          <h2 class="section-title">My Journey</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__item reveal" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="glass-card timeline__content">
+              <span class="timeline__status">In Progress</span>
+              <h3>Bachelor of Computer Science</h3>
+              <p class="timeline__org">Arab Open University</p>
+              <p>Currently studying core computer science foundations while building practical skills in AI and software.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal" data-reveal data-reveal-delay="100">
+            <div class="timeline__dot"></div>
+            <div class="glass-card timeline__content">
+              <span class="timeline__status">Ongoing</span>
+              <h3>AI Tools Mastery</h3>
+              <p class="timeline__org">Self-Directed Learning</p>
+              <p>Continuously exploring ChatGPT, Gemini, Copilot, Claude AI, Perplexity and generative tools like Leonardo AI and Midjourney.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal" data-reveal data-reveal-delay="200">
+            <div class="timeline__dot"></div>
+            <div class="glass-card timeline__content">
+              <span class="timeline__status">Ongoing</span>
+              <h3>Digital Marketing Practice</h3>
+              <p class="timeline__org">Facebook &amp; Meta Platforms</p>
+              <p>Managing pages, running ad campaigns and producing content through Meta Business Suite and Ads Manager.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal" data-reveal data-reveal-delay="300">
+            <div class="timeline__dot"></div>
+            <div class="glass-card timeline__content">
+              <span class="timeline__status">What's Next</span>
+              <h3>Real-World AI Projects</h3>
+              <p class="timeline__org">Looking Ahead</p>
+              <p>Seeking opportunities to combine AI and digital marketing skills on real client and team projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <p class="section-eyebrow">Let's Connect</p>
+          <h2 class="section-title">Contact Me</h2>
+          <p class="section-subtitle">Have an opportunity or a project in mind? I'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal" data-reveal>
+            <a href="mailto:abdwaboamre4@gmail.com" class="glass-card contact-info__item">
+              <span class="contact-info__icon">✉️</span>
+              <span>
+                <strong>Email</strong>
+                <p>abdwaboamre4@gmail.com</p>
+              </span>
+            </a>
+            <a href="tel:+201275230567" class="glass-card contact-info__item">
+              <span class="contact-info__icon">📞</span>
+              <span>
+                <strong>Phone</strong>
+                <p>+20 127 523 0567</p>
+              </span>
+            </a>
+            <div class="glass-card contact-info__item">
+              <span class="contact-info__icon">📍</span>
+              <span>
+                <strong>Location</strong>
+                <p>Cairo, Egypt</p>
+              </span>
+            </div>
+            <div class="glass-card contact-info__item">
+              <span class="contact-info__icon">🔗</span>
+              <span>
+                <strong>Socials</strong>
+                <p>GitHub &amp; LinkedIn — Coming Soon</p>
+              </span>
+            </div>
+          </div>
+
+          <form class="glass-card contact-form reveal" data-reveal data-reveal-delay="150" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is this about?" required />
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">
+              Send Message
+              <svg viewBox="0 0 24 24" class="icon"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="navbar__logo">
+          <span class="navbar__logo-mark">AA</span>
+          <span class="navbar__logo-text">Abu Amer</span>
+        </a>
+        <p>Computer Science Student · AI Enthusiast · Digital Marketing Specialist</p>
+      </div>
+
+      <div class="footer__links">
+        <h4>Quick Links</h4>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Get In Touch</h4>
+        <a href="mailto:abdwaboamre4@gmail.com">abdwaboamre4@gmail.com</a>
+        <a href="tel:+201275230567">+20 127 523 0567</a>
+        <p>Cairo, Egypt</p>
+      </div>
+
+      <div class="footer__socials">
+        <h4>Follow</h4>
+        <div class="hero__socials">
+          <a href="mailto:abdwaboamre4@gmail.com" class="social-icon" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="GitHub — coming soon" title="Coming soon">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03a9.4 9.4 0 0 1 5 0c1.9-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z" fill="currentColor"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn — coming soon" title="Coming soon">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21h-4z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Abdulrahman Abu Amer. All rights reserved.</p>
+      <p>Designed &amp; built with a focus on AI and digital marketing.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5m0 0-6 6m6-6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
